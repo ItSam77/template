@@ -7,6 +7,7 @@ const projects = [
     gradientTo: "to-accent/5",
     title: "Project Alpha",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.",
+    highlights: ["React & Next.js", "Responsive Design", "SEO Optimized"],
   },
   {
     icon: "📱",
@@ -16,6 +17,7 @@ const projects = [
     gradientTo: "to-blue-500/5",
     title: "Project Beta",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    highlights: ["React Native", "iOS & Android", "Push Notifications"],
   },
   {
     icon: "🚀",
@@ -25,6 +27,7 @@ const projects = [
     gradientTo: "to-emerald-500/5",
     title: "Project Gamma",
     description: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+    highlights: ["Node.js Backend", "PostgreSQL", "REST API"],
   },
   {
     icon: "💡",
@@ -34,6 +37,7 @@ const projects = [
     gradientTo: "to-purple-500/5",
     title: "Project Delta",
     description: "Excepteur sint occaecat cupidatat non proident sunt in culpa.",
+    highlights: ["Logo Design", "Brand Guidelines", "Visual Identity"],
   },
   {
     icon: "✨",
@@ -43,6 +47,7 @@ const projects = [
     gradientTo: "to-rose-500/5",
     title: "Project Epsilon",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+    highlights: ["User Research", "Wireframing", "Prototyping"],
   },
   {
     icon: "⚡",
@@ -52,6 +57,7 @@ const projects = [
     gradientTo: "to-amber-500/5",
     title: "Project Zeta",
     description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
+    highlights: ["Stripe Integration", "Inventory System", "Analytics"],
   },
 ];
 
@@ -82,7 +88,19 @@ export default function Work() {
                   {project.category}
                 </p>
                 <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{project.description}</p>
+                <p className="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
+                
+                {/* 3 Highlights */}
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
+                  {project.highlights.map((highlight) => (
+                    <span
+                      key={highlight}
+                      className="px-3 py-1 text-xs font-medium bg-background/50 text-muted rounded-full border border-border"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -91,4 +109,3 @@ export default function Work() {
     </section>
   );
 }
-
